@@ -11,7 +11,7 @@ function Home() {
           <h1>Transform Your Body. Transform Your Life.</h1>
           <p>
             Join our gym and achieve your fitness goals with expert trainers and
-            modern equipment.
+            modern equipment..
           </p>
           <button className="btn">Join Now</button>
         </div>
@@ -22,4 +22,5 @@ function Home() {
 }
 
 export default Home;
+
 
