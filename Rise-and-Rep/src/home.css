@@ -1,5 +1,11 @@
 /* this is home file  */
 
-.{
-  background: blue;
+.hero{
+   display:flex;
+  justify-content: center;
+  align-items:center;
+}
+.hero-content{
+  color:white;
+  margin-top:9rem;
 }
