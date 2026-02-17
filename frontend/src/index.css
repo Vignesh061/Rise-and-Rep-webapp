@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base Styles ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #141414;
+  color: #e5e5e5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #141414;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 3px;
+}
+
+/* ── Glassmorphism Utility ── */
+.glass {
+  background: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(42, 42, 42, 0.6);
+}
+
+/* ── Gradient Text (Netflix Red) ── */
+.gradient-text {
+  background: linear-gradient(135deg, #E50914, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Animated gradient background ── */
+.hero-gradient {
+  background: linear-gradient(135deg, #141414 0%, #1a0000 50%, #141414 100%);
+  position: relative;
+}
+
+.hero-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(229, 9, 20, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(229, 9, 20, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* ── Card hover effect ── */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Pulse blob animation ── */
+@keyframes pulse-blob {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-blob {
+  animation: pulse-blob 4s ease-in-out infinite;
+}
+
+/* ── Input focus ring ── */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.3);
+}
+
+/* ── Select / Option fix for dark theme ── */
+select {
+  background-color: #1a1a1a;
+  color: #e5e5e5;
+  appearance: auto;
+}
+
+select option {
+  background-color: #1a1a1a;
+  color: #e5e5e5;
+}
+
+select option:checked {
+  background-color: #333333;
+  color: #ffffff;
+}
